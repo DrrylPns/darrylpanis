@@ -12,7 +12,7 @@ export const Hero = () => {
             </div>
 
             <div className="text-3xl">
-                Hey, I'm Darryl
+                Hey, I&apos;m Darryl
             </div>
 
             <div className="text-sm text-muted-foreground">
