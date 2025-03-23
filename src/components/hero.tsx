@@ -21,7 +21,7 @@ export const Hero = () => {
             </div>
 
             <div className="text-3xl">
-                Hey, I&apos;m Darryl
+                Hey, I&apos;m Darryl Panis
             </div>
 
             <div className="text-sm text-muted-foreground">
