@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Techs = () => {
     return (
-        <div className="flex flex-col justify-center items-center min-h-dvh">
+        <div className="flex flex-col justify-center items-center min-h-dvh px-3">
             <div className="flex flex-col gap-1 mb-4">
                 <div className="text-3xl font-semibold">My Technologies</div>
                 <p className="text-muted-foreground text-sm">Here are the technologies and tools I frequently use in my development journey</p>
@@ -24,7 +24,7 @@ export const Techs = () => {
                         </div>
 
                         <div className="pl-3">
-                            <div className="">
+                            <div className="line-clamp-1">
                                 {tech.name}
                             </div>
 
