@@ -4,21 +4,33 @@ import Image from "next/image";
 export const Techs = () => {
     return (
         <div className="flex flex-col justify-center items-center min-h-dvh">
-            <div className="text-3xl font-semibold w-full mb-3 flex justify-center">My Technologies</div>
+            <div className="flex flex-col gap-1 mb-4">
+                <div className="text-3xl font-semibold">My Technologies</div>
+                <p className="text-muted-foreground text-sm">Here are the technologies and tools I frequently use in my development journey</p>
+            </div>
 
-            <div className="grid grid-cols-3 items-center gap-5">
+            <div className="grid grid-cols-2 items-center gap-5 w-full">
                 {techs.map((tech, i) => (
-                    <div className="bg-muted p-2 rounded-lg flex flex-col items-center justify-center" key={i}>
-                        <div className="relative w-12 h-12 mb-1">
-                            <Image
-                                src={tech.image}
-                                alt={tech.name}
-                                fill
-                                className="object-contain"
-                            />
+                    <div className="bg-zinc-100 hover:bg-zinc-200 p-2 rounded-lg flex flex-row items-center" key={i}>
+                        <div className={`${tech.bgColor} p-2 rounded-lg`}>
+                            <div className="relative w-8 h-8 mb-1">
+                                <Image
+                                    src={tech.image}
+                                    alt={tech.name}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         </div>
-                        <div className="text-sm text-muted-foreground">
-                            {tech.name}
+
+                        <div className="pl-3">
+                            <div className="">
+                                {tech.name}
+                            </div>
+
+                            <div className="text-sm text-muted-foreground">
+                                {tech.description}
+                            </div>
                         </div>
                     </div>
                 ))}
