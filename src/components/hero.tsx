@@ -39,8 +39,8 @@ export const Hero = () => {
                 GitHub
             </Link>
 
-            <Avatar className="w-[50px] h-[50px]">
-                <AvatarImage src="https://github.com/shadcn.png" />
+            <Avatar className="w-[70px] h-[70px]">
+                <AvatarImage src="/assets/my-pic.svg" />
                 <AvatarFallback>DP</AvatarFallback>
             </Avatar>
 
