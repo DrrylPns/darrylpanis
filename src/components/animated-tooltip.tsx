@@ -8,6 +8,7 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
+import Image from "next/image";
 
 export const AnimatedTooltip = ({
   items,
@@ -15,8 +16,9 @@ export const AnimatedTooltip = ({
   items: {
     id: number;
     name: string;
-    designation: string;
+    description: string;
     image: string;
+    bgColor?: string;
   }[];
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -41,7 +43,7 @@ export const AnimatedTooltip = ({
     <>
       {items.map((item) => (
         <div
-          className="group relative -mr-4"
+          className={`-mr-4 relative group p-2 rounded-full ${item.bgColor}`}
           key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -73,18 +75,20 @@ export const AnimatedTooltip = ({
                 <div className="relative z-30 text-base font-bold text-white">
                   {item.name}
                 </div>
-                <div className="text-xs text-white">{item.designation}</div>
+                <div className="text-xs text-white">{item.description}</div>
               </motion.div>
             )}
           </AnimatePresence>
-          <img
+          {/* <div className={`rounded-full ${item.bgColor}`}> */}
+          <Image
             onMouseMove={handleMouseMove}
-            height={100}
-            width={100}
+            height={200}
+            width={200}
             src={item.image}
             alt={item.name}
-            className="relative !m-0 h-14 w-14 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
+            className={`relative !m-0 h-12 w-12 rounded-full object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105`}
           />
+          {/* </div> */}
         </div>
       ))}
     </>

@@ -1,5 +1,6 @@
 import { techs } from "@/lib/types";
 import Image from "next/image";
+import { AnimatedTooltip } from "./animated-tooltip";
 
 export const Techs = () => {
   return (
@@ -11,8 +12,11 @@ export const Techs = () => {
           website applications.
         </p>
       </div>
+      <div className="flex flex-row items-center justify-center my-5 w-full">
+        <AnimatedTooltip items={techs} />
+      </div>
 
-      <div className="grid grid-cols-2 items-center gap-5 w-full">
+      {/* <div className="grid grid-cols-2 items-center gap-5 w-full">
         {techs.map((tech, i) => (
           <div
             className="bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-500/20 dark:hover:bg-zinc-500/30 p-2 rounded-lg flex flex-row items-center"
@@ -38,7 +42,7 @@ export const Techs = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
