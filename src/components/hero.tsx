@@ -1,11 +1,10 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button, buttonVariants } from "./ui/button";
 import { MdEmail } from "react-icons/md";
 import { StarsBackground } from "./stars-background";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Button, buttonVariants } from "./ui/button";
 
 export const Hero = () => {
   return (
