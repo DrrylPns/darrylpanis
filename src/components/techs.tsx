@@ -5,7 +5,7 @@ import { FollowerPointerCard } from "./following-pointer";
 
 export const Techs = () => {
   return (
-    <div className="flex flex-col items-center px-3 max-w-xl mt-[6rem]">
+    <div className="flex flex-col items-center px-3 max-w-xl mt-[4rem]">
       <div className="flex flex-col gap-1 mb-4">
         <div className="text-3xl font-semibold">My Technologies</div>
         <p className="text-muted-foreground text-sm">
