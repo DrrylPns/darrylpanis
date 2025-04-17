@@ -1,10 +1,11 @@
 import { techs } from "@/lib/types";
 import Image from "next/image";
 import { AnimatedTooltip } from "./animated-tooltip";
+import { FollowerPointerCard } from "./following-pointer";
 
 export const Techs = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-h-dvh px-3">
+    <div className="flex flex-col items-center px-3 max-w-xl mt-[6rem]">
       <div className="flex flex-col gap-1 mb-4">
         <div className="text-3xl font-semibold">My Technologies</div>
         <p className="text-muted-foreground text-sm">
@@ -12,14 +13,15 @@ export const Techs = () => {
           website applications.
         </p>
       </div>
-      <div className="flex flex-row items-center justify-center my-5 w-full">
+      {/* <div className="flex flex-row items-center justify-center my-5 w-full">
         <AnimatedTooltip items={techs} />
-      </div>
+        </div> */}
 
-      {/* <div className="grid grid-cols-2 items-center gap-5 w-full">
+      <div className="grid grid-cols-2 items-center gap-5 w-full">
         {techs.map((tech, i) => (
-          <div
+          <FollowerPointerCard
             className="bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-500/20 dark:hover:bg-zinc-500/30 p-2 rounded-lg flex flex-row items-center"
+            title={tech.name}
             key={i}
           >
             <div className={`${tech.bgColor} p-2 rounded-lg`}>
@@ -40,9 +42,9 @@ export const Techs = () => {
                 {tech.description}
               </div>
             </div>
-          </div>
+          </FollowerPointerCard>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };

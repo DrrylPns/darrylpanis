@@ -4,7 +4,7 @@ import { Techs } from "@/components/techs";
 
 export default function Home() {
   return (
-    <section className="w-full min-h-dvh flex flex-col gap-3 items-center justify-center mt-7">
+    <section className="w-full min-h-dvh flex flex-col gap-3 items-center justify-center mt-7 px-6">
       <Hero />
       <Techs />
     </section>

@@ -9,7 +9,7 @@ import { Button, buttonVariants } from "./ui/button";
 export const Hero = () => {
   return (
     <>
-      <div className="max-w-xs w-full">
+      <div className="max-w-xl w-full">
         <StarsBackground />
         <div className="relative">
           <Avatar className="w-[50px] h-[50px] mb-3 absolute z-50 bottom-[130px] left-5">
@@ -19,11 +19,15 @@ export const Hero = () => {
           <div
             className={cn(
               "group w-full cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
-              "bg-[url(https://xnp6i843pr.ufs.sh/f/0VXm2UCFbuqyz8WAye5DLm56lEiATztb0UFoeOdsCcrVSXW7)] bg-cover",
-              // Preload hover image by setting it in a pseudo-element
-              "before:bg-[url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXUydWd5aG1nNXBtNGVjcDBmMHEzaHV6bngxNDkyZ2FjYzc5YWM1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
-              "hover:bg-[url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXUydWd5aG1nNXBtNGVjcDBmMHEzaHV6bngxNDkyZ2FjYzc5YWM1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif)]",
+              // Base background image styles
+              "bg-[url(https://xnp6i843pr.ufs.sh/f/0VXm2UCFbuqyz8WAye5DLm56lEiATztb0UFoeOdsCcrVSXW7)] bg-cover bg-center",
+              // Preload hover image using before pseudo-element, ensure it covers and centers
+              "before:bg-[url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXUydWd5aG1nNXBtNGVjcDBmMHEzaHV6bngxNDkyZ2FjYzc5YWM1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif)] before:absolute before:inset-0 before:opacity-0 before:z-[-1] before:bg-cover before:bg-center",
+              // Hover state background image styles, ensure it covers and centers
+              "hover:bg-[url(https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXUydWd5aG1nNXBtNGVjcDBmMHEzaHV6bngxNDkyZ2FjYzc5YWM1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VbnUQpnihPSIgIXuZv/giphy.gif)] hover:bg-cover hover:bg-center",
+              // Overlay on hover
               "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
+              // Transition for smooth effect
               "transition-all duration-500"
             )}
           >
@@ -31,14 +35,14 @@ export const Hero = () => {
               <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
                 Darryl Panis
               </h1>
-              <p className="font-normal text-base text-gray-50 relative my-4">
-                A Full Stack Web Developer, Based in the Philippines
+              <p className="font-normal text-base text-gray-300/80 relative my-4">
+                A Full Stack Web Developer, Based in the Philippines with one
+                year experience.
               </p>
             </div>
           </div>
         </div>
       </div>
-
       <div className="z-50">
         <Link
           href="https://github.com/DrrylPns"
