@@ -50,7 +50,7 @@ export const personalProjects: Projects[] = [
     {
         id: 1,
         name: "AGreenNatureConnect",
-        description: "Informational markethub with ",
+        description: "Informational markethub with social media features and videos for farmers",
         image: "/assets/agreennatureconnect.png",
         url: "https://a-green-nature-connect.vercel.app/",
         githubUrl: "",
@@ -71,8 +71,8 @@ export const clientProjects: Projects[] = [
         name: "ESMS",
         description: "An electronic school management system with a recommender system",
         image: "/assets/esms.png",
-        url: "",
-        githubUrl: "https://e-sms-flame.vercel.app/",
+        url: "https://e-sms-flame.vercel.app/",
+        githubUrl: "",
     },
     {
         id: 3,
