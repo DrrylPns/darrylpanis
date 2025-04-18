@@ -1,7 +1,7 @@
-import { techs } from "@/lib/types";
 import Image from "next/image";
 import { AnimatedTooltip } from "./animated-tooltip";
 import { FollowerPointerCard } from "./following-pointer";
+import { techs } from "@/lib/constants";
 
 export const Techs = () => {
   return (
