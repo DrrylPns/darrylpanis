@@ -1,10 +1,7 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { Contacts } from "./contacts";
 import { StarsBackground } from "./stars-background";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button, buttonVariants } from "./ui/button";
 
 export const Hero = () => {
   return (
@@ -43,34 +40,7 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="z-50">
-        <Link
-          href="https://github.com/DrrylPns"
-          className={cn(
-            "text-muted-foreground",
-            buttonVariants({
-              variant: "ghost",
-            })
-          )}
-          target="_"
-        >
-          <FaGithub />
-          GitHub
-        </Link>
-
-        <Button
-          variant="ghost"
-          className={cn(
-            "text-muted-foreground",
-            buttonVariants({
-              variant: "ghost",
-            })
-          )}
-        >
-          <MdEmail />
-          Email
-        </Button>
-      </div>
+      <Contacts />
     </>
     // <div className="flex flex-col gap-3 items-center min-h-dvh mt-7">
     //   <HeroCard />

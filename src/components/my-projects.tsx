@@ -18,7 +18,7 @@ const MyProjectsPage = () => {
         >
           {personalProjects.map((project) => (
             <Spotlight
-              spotlightColor="rgb(86, 69, 22, 0.7)"
+              spotlightColor="rgb(222, 221, 217, 0.2)"
               className="h-60 w-full"
               key={project.id}
             >
@@ -32,8 +32,8 @@ const MyProjectsPage = () => {
         >
           {clientProjects.map((project) => (
             <Spotlight
-              spotlightColor="rgb(86, 69, 22, 0.7)"
-              className="h-60 w-full"
+              spotlightColor="rgb(222, 221, 217, 0.2)"
+              className="h-60 w-full "
               key={project.id}
             >
               <ProjectCards project={project} />
