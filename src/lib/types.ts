@@ -18,5 +18,5 @@ export interface Projects {
     description: string;
     image: string;
     url: string;
-    githubUrl: string;
+    githubUrl?: string;
 }

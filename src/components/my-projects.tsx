@@ -6,7 +6,7 @@ import { Spotlight } from "./spotlight";
 
 const MyProjectsPage = () => {
   return (
-    <div className="w-full flex flex-col items-center my-[4rem] min-h-dvh">
+    <div className="w-full flex flex-col items-center my-[4rem]">
       <Tabs defaultValue="personal-projects" className="max-w-xl w-full">
         <TabsList className="w-full mb-2">
           <TabsTrigger value="personal-projects">Personal Projects</TabsTrigger>

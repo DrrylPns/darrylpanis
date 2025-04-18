@@ -26,17 +26,23 @@ export const FollowerPointerCard = ({
   const [isInside, setIsInside] = useState<boolean>(false);
 
   useEffect(() => {
-    if (ref.current) {
-      setRect(ref.current.getBoundingClientRect());
-    }
+    const updateRect = () => {
+      if (ref.current) {
+        setRect(ref.current.getBoundingClientRect());
+      }
+    };
+    updateRect();
+
+    window.addEventListener("resize", updateRect);
+    return () => window.removeEventListener("resize", updateRect);
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (rect) {
-      const scrollX = window.scrollX;
-      const scrollY = window.scrollY;
-      x.set(e.clientX - rect.left + scrollX);
-      y.set(e.clientY - rect.top + scrollY);
+      const relativeX = e.clientX - rect.left;
+      const relativeY = e.clientY - rect.top;
+      x.set(relativeX);
+      y.set(relativeY);
     }
   };
   const handleMouseLeave = () => {
@@ -44,6 +50,9 @@ export const FollowerPointerCard = ({
   };
 
   const handleMouseEnter = () => {
+    if (ref.current) {
+      setRect(ref.current.getBoundingClientRect());
+    }
     setIsInside(true);
   };
   return (
@@ -55,7 +64,7 @@ export const FollowerPointerCard = ({
         cursor: "none",
       }}
       ref={ref}
-      className={cn("relative", className)}
+      className={cn("relative overflow-hidden", className)}
     >
       <AnimatePresence>
         {isInside && <FollowPointer x={x} y={y} title={title} />}
@@ -110,7 +119,10 @@ export const FollowPointer = ({
       </svg>
       <motion.div
         style={{
-          backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+          backgroundColor: colors[0],
+          position: "absolute",
+          top: "10px",
+          left: "10px",
         }}
         initial={{
           scale: 0.5,
@@ -125,10 +137,10 @@ export const FollowPointer = ({
           opacity: 0,
         }}
         className={
-          "min-w-max rounded-full bg-neutral-200 px-2 py-2 text-xs whitespace-nowrap text-white"
+          "min-w-max rounded-full bg-neutral-200 px-2 py-1 text-xs whitespace-nowrap text-white"
         }
       >
-        {title || `William Shakespeare`}
+        {title}
       </motion.div>
     </motion.div>
   );

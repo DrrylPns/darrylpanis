@@ -79,7 +79,7 @@ export const clientProjects: Projects[] = [
         name: "ESMS",
         description: "An electronic school management system with a recommender system",
         image: "/arcade.jpg",
-        url: "",
+        url: "naraveltales.online",
         githubUrl: "",
     },
 ]
